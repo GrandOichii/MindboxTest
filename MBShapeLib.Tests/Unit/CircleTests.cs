@@ -22,8 +22,6 @@ public class CircleTests {
     [InlineData(-1, false)]
     [InlineData(0, true)]
     public void ShouldBeValid(double radius, bool expectedValid) {
-        // Arrange
-
         // Act
         var act = () => new Circle(radius);
 

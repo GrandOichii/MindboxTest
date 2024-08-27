@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: mb-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: 'Password!'
+    ports:
+      - 1433:1433
+    volumes:
+      - mb-db-data:/var/opt/mssql
+volumes:
+  mb-db-data:

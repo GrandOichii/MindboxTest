@@ -2,6 +2,9 @@ namespace MBShapeLib;
 
 public class Triangle : IShape
 {
+    /// <summary>
+    /// Triangle sides
+    /// </summary>
     private readonly double[] _sides;
 
     public Triangle(double AB, double BC, double AC) {
@@ -30,6 +33,11 @@ public class Triangle : IShape
         return Math.Sqrt(inner);
     }
 
+    /// <summary>
+    /// Check whether the triangle is a right triangle or not
+    /// </summary>
+    /// <param name="precision">Precision point</param>
+    /// <returns>True if the triangle of right, otherwise false</returns>
     public bool IsRight(double precision = .0000001) {
         var maxIdx = _sides.ToList().IndexOf(_sides.Max());
         var idx1 = (maxIdx + 1) % _sides.Length;
