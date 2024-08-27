@@ -8,6 +8,9 @@ public class Triangle : IShape
     private readonly double[] _sides;
 
     public Triangle(double AB, double BC, double AC) {
+        if (AB < 0 || BC < 0 || AC < 0)
+            throw new ArgumentOutOfRangeException($"A triangle's side can't be less than 0: {AB} {BC} {AC}");
+            
         if (
             AB + BC <= AC ||
             AB + AC <= BC ||

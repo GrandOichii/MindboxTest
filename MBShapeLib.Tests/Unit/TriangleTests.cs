@@ -18,7 +18,7 @@ public class TriangleTests {
             act.Should().NotThrow();
             return;
         }
-        act.Should().ThrowExactly<ArgumentException>();
+        act.Should().Throw<ArgumentException>();
 
     }
     [Theory]
